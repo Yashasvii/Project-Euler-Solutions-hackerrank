@@ -34,10 +34,10 @@ def triangular_number():
         triangle_number = n * (n + 1) / 2
         n += 1
         square_root = math.sqrt(triangle_number)
-        for i in range(1, int(square_root + 1)):
+        for i in range(2, int(square_root + 1)):
             if triangle_number % i == 0:
                 count_factor = count_factor + 1
-        count_factor = 2 * count_factor - 1 if square_root ** 2 == triangle_number else 2 * count_factor
+        count_factor = 2 * count_factor + 1 if square_root ** 2 == triangle_number else 2 * count_factor +2
         if count_factor > 500:
             return int(triangle_number)
 
