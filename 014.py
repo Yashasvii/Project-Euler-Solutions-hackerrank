@@ -24,13 +24,14 @@ NOTE: Once the chain starts the terms are allowed to go above one million.
 
 def get_count():
     st_count_dict = {}
+    max_num = 0
+    max_starting_num =None
     for starting_num in range(1, 1000000):
         num = starting_num
         count = 1
         while num != 1:
             if num in st_count_dict:
                 count += st_count_dict[num]
-                st_count_dict[starting_num] = count
                 break
             if num % 2 == 0:
                 num /= 2
@@ -38,7 +39,10 @@ def get_count():
                 num = 3 * num + 1
             count += 1
         st_count_dict[starting_num] = count
-    return max(st_count_dict, key=st_count_dict.get)
+        if max_num < count:
+            max_num = count
+            max_starting_num = starting_num
+    return max_starting_num
 
 
 if __name__ == '__main__':
