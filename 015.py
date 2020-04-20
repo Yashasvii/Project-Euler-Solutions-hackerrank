@@ -15,5 +15,5 @@ def combination(n, r):
 
 
 if __name__ == "__main__":
-    num = 5
+    num = 20
     print(combination(num * 2, num))
