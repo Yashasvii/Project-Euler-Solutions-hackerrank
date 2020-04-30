@@ -9,13 +9,19 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
 
-def find_sum():
-    sum = 0
-    for i in range(3, 1000):
-        if i % 3 == 0 or i % 5 == 0:
-            sum += i
-    return sum
+def sum_of_natural_num(n, div):
+    n = (n - 1) // div
+    return n * (n + 1) // 2
+
+
+def find_sum(n):
+    return 3 * sum_of_natural_num(n, 3) + 5 * sum_of_natural_num(n, 5) - 15 * sum_of_natural_num(n, 15)
 
 
 if __name__ == '__main__':
-    print(find_sum())
+    # !/bin/python3
+    t = int(input().strip())
+    three_or_five_dict = {}
+    for a0 in range(t):
+        num = int(input().strip())
+        print(find_sum(num))
