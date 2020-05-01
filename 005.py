@@ -10,13 +10,14 @@ from 1 to 20?
 """
 import math
 
-
-def smallest_lcm():
+def smallest_lcm(n):
     val = 1
-    for i in range(1, 21):
+    for i in range(2, n+1):
         val *= i // math.gcd(i, val)
     return val
 
 
-if __name__ == '__main__':
-    print(smallest_lcm())
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    print(smallest_lcm(n))
