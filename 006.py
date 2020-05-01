@@ -17,8 +17,19 @@ hundred natural numbers and the square of the sum.
 import math
 
 
-if __name__ == '__main__':
-    print(abs(sum(math.pow(i, 2) for i in range(1, 101)) - math.pow(sum(i for i in range(1, 101)), 2)))
+def sum_of_natural_number(n):
+    return (n * (n + 1) // 2) ** 2
 
 
+def sum_of_squares_of_natural_number(n):
+    return (n * (n + 1) * (2 * n + 1)) // 6
 
+
+def final_ans(n):
+    return sum_of_natural_number(n) - sum_of_squares_of_natural_number(n)
+
+
+t = int(input().strip())
+for a0 in range(t):
+    num = int(input().strip())
+    print(final_ans(num))
