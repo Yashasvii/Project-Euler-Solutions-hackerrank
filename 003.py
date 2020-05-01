@@ -26,5 +26,7 @@ def smallest_prime_factor(num):
     return num
 
 
-if __name__ == '__main__':
-    print(largest_prime(600851475143))
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    print(largest_prime(n))
