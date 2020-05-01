@@ -12,18 +12,21 @@ exceed four million.
 """
 
 
-def fibonacci_sum():
+def fibonacci_sum(n):
     i = 1
     j = 2
     sum = 0
-    while i < 4000000:
+    while i < n:
         temp = i
-        i = j
-        j = j + temp
         if i % 2 == 0:
             sum += i
+        i = j
+        j = j + temp
     return sum
 
 
 if __name__ == '__main__':
-    print(fibonacci_sum())
+    t = int(input().strip())
+    for a0 in range(t):
+        n = int(input().strip())
+        print(fibonacci_sum(n))
