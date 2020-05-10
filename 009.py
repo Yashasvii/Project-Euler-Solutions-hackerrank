@@ -13,13 +13,22 @@ Find the product abc.
 """
 
 
-def pytha_calc():
-    for a in range(1, 995 + 1):
-        for b in range(a + 1, 996 + 1):
-            c = 1000 - a - b
-            if a * a + b * b == c * c:
-                return a * b * c
+def pytha_calc(N):
+    largest = -1
+    for a in range(1, N - 4):
+        b = (N**2-2*a*N)//(2*N-2*a)
+        if b >= 2:
+            c = N - a - b
+            if a ** 2 + b ** 2 == c ** 2:
+                product = a * b * c
+                if largest < product:
+                    largest = product
+
+    return largest
 
 
 if __name__ == '__main__':
-    print(pytha_calc())
+    t = int(input().strip())
+    for a0 in range(t):
+        n = int(input().strip())
+        print(pytha_calc(n))
