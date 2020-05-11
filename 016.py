@@ -8,11 +8,14 @@ What is the sum of the digits of the number 2^1000?
 """
 
 
-def sum_of_digit():
-    num = 2 ** 1000
+def sum_of_digit(n):
+    num = 2 ** n
     result = sum(int(i) for i in str(num))
     return result
 
 
 if __name__ == '__main__':
-    print(sum_of_digit())
+    count = int(input().strip())
+    for i in range(count):
+        power = int(input().strip())
+        print(sum_of_digit(power))
