@@ -16,15 +16,13 @@ def prime(n, prime_list):
 
     prime_list_length = len(prime_list)
 
-    if (n == 1):
+    if n == 1:
         return 2
 
     if prime_list_length > 1:
-        if prime_list_length == n:
+        if prime_list_length >= n:
             return prime_list[n - 1]
-        if prime_list_length > n:
-            return prime_list[n - 1]
-        elif prime_list_length < n:
+        else:
             count = prime_list_length + 1
             number = prime_list[prime_list_length - 1] + 2
 
@@ -45,7 +43,6 @@ def prime(n, prime_list):
 
 if __name__ == '__main__':
     t = int(input().strip())
-    prime_dict = {}
     prime_list = [2]
     for a0 in range(t):
         num = int(input().strip())
