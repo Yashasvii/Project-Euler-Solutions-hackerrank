@@ -15,5 +15,9 @@ def combination(n, r):
 
 
 if __name__ == "__main__":
-    num = 20
-    print(combination(num * 2, num))
+    cases = int(input().strip())
+    for i in range(cases):
+        N, M = input().strip().split(' ')
+        N, M = [int(N), int(M)]
+        print(combination((N + M), M) % (
+                    10 ** 9 + 7))  # (10**9+7) is added according to hackerran requirement, remove it from euler problem
