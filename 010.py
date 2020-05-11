@@ -14,9 +14,7 @@ def sum_prime(num_below, list_sum):
     start = 2
     length = len(list_sum)
     if length > 2:
-        if length-1 == num_below:
-            return list_sum[length-1]
-        elif length-1 > num_below:
+        if length-1 >= num_below:
             return list_sum[num_below]
         else:
             start = length
