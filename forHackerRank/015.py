@@ -20,4 +20,4 @@ if __name__ == "__main__":
         N, M = input().strip().split(' ')
         N, M = [int(N), int(M)]
         print(combination((N + M), M) % (
-                    10 ** 9 + 7))  # (10**9+7) is added according to hackerran requirement, remove it from euler problem
+                    10 ** 9 + 7))
