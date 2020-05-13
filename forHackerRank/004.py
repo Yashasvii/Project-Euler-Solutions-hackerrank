@@ -3,13 +3,6 @@ Project Euler Problem 4
 =======================
 
 """
-
-
-# !/bin/python3
-
-# !/bin/python3
-
-
 def get_palin_set():
     palin_set = set()
     for i in range(100, 1000):
